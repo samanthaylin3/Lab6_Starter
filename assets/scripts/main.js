@@ -43,6 +43,53 @@ async function fetchRecipes() {
     // in the recipes folder and fetch them from there. You'll need to add their paths to the recipes array.
 
     // Part 1 Expose - TODO
+    // let i = 0;
+    // while(i < recipes.length) {
+    // while(i < 3) {
+      // console.log(recipes[i]);
+      // // fetch(recipes[i])
+      // fetch(recipes[0])
+      // .then(response => response.json())
+      // .then(data => {
+      //   for(let j = 0; j < 3; j++){
+      //     console.log('recipe link: ',recipes[j])
+      //     recipeData[recipes[j]] = data;
+      //   }
+      //   recipeData[recipes[i]] = data;
+      //   console.log('data:', {recipeData});
+      // })
+      // .catch((error) => {
+      //   console.error('Error:', error);
+      // });
+      // // console.log(i, ": ", recipeData[recipes[i]]);
+      // // i++;
+    // }
+    // for(let j = 0; j < recipes.length; j++){
+    //   console.log(i, ": ", recipeData[recipes[i]]);
+    // }
+    fetch(recipes[0])
+      .then(response => response.json())
+      .then(data => {
+        for(let i = 0; i < recipes.length; i++){
+          console.log('recipe link: ',recipes[i])
+          recipeData[recipes[i]] = data;
+        }
+        console.log('data:', {recipeData});
+        
+        let count = 0
+        for(var obj in recipeData){
+          count++;
+        }
+        if (count == recipes.length){
+          resolve(true);
+        }
+        else{
+          reject(false);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   });
 }
 
