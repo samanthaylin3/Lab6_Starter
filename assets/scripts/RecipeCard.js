@@ -139,21 +139,27 @@ class RecipeCard extends HTMLElement {
     }
     else if(average_rating < 0.5){
       stars.setAttribute('src', 'assets/images/icons/0-star.svg');
+      stars.setAttribute('alt', '0 stars');
     }
     else if (average_rating < 1.5){
       stars.setAttribute('src', 'assets/images/icons/1-star.svg');
+      stars.setAttribute('alt', '1 stars');
     }
     else if (average_rating < 2.5){
       stars.setAttribute('src', 'assets/images/icons/2-star.svg');
+      stars.setAttribute('alt', '2 stars');
     }
     else if (average_rating < 3.5){
       stars.setAttribute('src', 'assets/images/icons/3-star.svg');
+      stars.setAttribute('alt', '3 stars');
     }
     else if (average_rating < 4.5){
       stars.setAttribute('src', 'assets/images/icons/4-star.svg');
+      stars.setAttribute('alt', '4 stars');
     }
     else {
       stars.setAttribute('src', 'assets/images/icons/5-star.svg');
+      stars.setAttribute('alt', '5 stars');
     }
 
     const rating_count = document.createElement('span');
@@ -180,7 +186,6 @@ class RecipeCard extends HTMLElement {
     card.appendChild(ingredients)
   }
 }
-
 
 
 /*********************************************************************/
