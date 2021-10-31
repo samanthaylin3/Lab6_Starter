@@ -104,7 +104,7 @@ function bindShowMore() {
     }
     else {
       main.innerHTML='';
-      button.innerHTML = "Show less";
+      button.innerHTML = "Show more";
       createRecipeCards();
     }
     clicks++;
